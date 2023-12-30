@@ -138,13 +138,8 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
               <Th>{t('Name')}</Th>
               <Th>Api Key</Th>
               <Th>已用额度(￥)</Th>
-              {feConfigs?.isPlus && (
-                <>
-                  <Th>最大额度(￥)</Th>
-                  <Th>过期时间</Th>
-                </>
-              )}
-
+              <Th>最大额度(￥)</Th>
+              <Th>过期时间</Th>
               <Th>创建时间</Th>
               <Th>最后一次使用时间</Th>
               <Th />
@@ -156,16 +151,12 @@ const ApiKeyTable = ({ tips, appId }: { tips: string; appId?: string }) => {
                 <Td>{name}</Td>
                 <Td>{apiKey}</Td>
                 <Td>{usage}</Td>
-                {feConfigs?.isPlus && (
-                  <>
-                    <Td>{limit?.credit && limit?.credit > -1 ? `${limit?.credit}` : '无限制'}</Td>
+                <Td>{limit?.credit && limit?.credit > -1 ? `${limit?.credit}` : '无限制'}</Td>
                     <Td whiteSpace={'pre-wrap'}>
                       {limit?.expiredTime
                         ? dayjs(limit?.expiredTime).format('YYYY/MM/DD\nHH:mm')
                         : '-'}
-                    </Td>
-                  </>
-                )}
+                </Td>
                 <Td whiteSpace={'pre-wrap'}>{dayjs(createTime).format('YYYY/MM/DD\nHH:mm:ss')}</Td>
                 <Td whiteSpace={'pre-wrap'}>
                   {lastUsedTime ? dayjs(lastUsedTime).format('YYYY/MM/DD\nHH:mm:ss') : '没有使用过'}
@@ -319,8 +310,6 @@ function EditKeyModal({
             })}
           />
         </Flex>
-        {feConfigs?.isPlus && (
-          <>
             <Flex alignItems={'center'} mt={4}>
               <Flex flex={'0 0 90px'} alignItems={'center'}>
                 {t('common.Max credit')}:
@@ -353,8 +342,6 @@ function EditKeyModal({
                 }}
               />
             </Flex>
-          </>
-        )}
       </ModalBody>
 
       <ModalFooter>

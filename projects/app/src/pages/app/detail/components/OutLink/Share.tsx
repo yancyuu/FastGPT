@@ -114,17 +114,14 @@ const Share = ({ appId }: { appId: string }) => {
                 <Td>{item.name}</Td>
                 <Td>
                   {formatPrice(item.total)}
-                  {feConfigs?.isPlus
-                    ? `${
+                  {`${
                         item.limit && item.limit.credit > -1
                           ? ` / ${item.limit.credit}元`
                           : ' / 无限制'
                       }`
-                    : ''}
+                  }
                 </Td>
                 <Td>{item.responseDetail ? '✔' : '✖'}</Td>
-                {feConfigs?.isPlus && (
-                  <>
                     <Td>{item?.limit?.QPM || '-'}</Td>
                     <Td>
                       {item?.limit?.expiredTime
@@ -132,7 +129,6 @@ const Share = ({ appId }: { appId: string }) => {
                         : '-'}
                     </Td>
                     <Th>{item?.limit?.hookUrl ? '✔' : '✖'}</Th>
-                  </>
                 )}
                 <Td>{item.lastTime ? formatTimeToChatTime(item.lastTime) : '未使用'}</Td>
                 <Td display={'flex'} alignItems={'center'}>
@@ -296,8 +292,6 @@ function EditLinkModal({
             })}
           />
         </Flex>
-        {feConfigs?.isPlus && (
-          <>
             <Flex alignItems={'center'} mt={4}>
               <Flex flex={'0 0 90px'} alignItems={'center'}>
                 QPM
@@ -368,8 +362,6 @@ function EditLinkModal({
             >
               {t('outlink.token auth use cases')}
             </Link>
-          </>
-        )}
 
         <Flex alignItems={'center'} mt={4}>
           <Flex flex={'0 0 90px'} alignItems={'center'}>

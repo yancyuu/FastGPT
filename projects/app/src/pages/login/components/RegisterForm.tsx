@@ -3,11 +3,7 @@ import { FormControl, Box, Input, Button, FormErrorMessage, Flex } from '@chakra
 import { useForm } from 'react-hook-form';
 import { PageTypeEnum } from '@/constants/user';
 import { postRegister } from '@/web/support/user/api';
-import { useSendCode } from '@/web/support/user/hooks/useSendCode';
-import type { ResLogin } from '@/global/support/api/userRes';
 import { useToast } from '@/web/common/hooks/useToast';
-import { postCreateApp } from '@/web/core/app/api';
-import { appTemplates } from '@/web/core/app/templates';
 import { feConfigs } from '@/web/common/system/staticData';
 
 interface Props {
@@ -17,9 +13,7 @@ interface Props {
 
 interface RegisterType {
   username: string;
-  password: string;
-  password2: string;
-  code: string;
+  authCode: string;  // 授权码字段
 }
 
 const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
@@ -27,35 +21,21 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
   const {
     register,
     handleSubmit,
-    getValues,
-    trigger,
     formState: { errors }
   } = useForm<RegisterType>({
     mode: 'onBlur'
   });
 
-  const { sendCodeText, sendCode, codeCountDown } = useSendCode();
-
-  const onclickSendCode = useCallback(async () => {
-    const check = await trigger('username');
-    if (!check) return;
-    sendCode({
-      username: getValues('username'),
-      type: 'register'
-    });
-  }, [getValues, sendCode, trigger]);
-
   const [requesting, setRequesting] = useState(false);
 
   const onclickRegister = useCallback(
-    async ({ username, password, code }: RegisterType) => {
+    async ({ username, authCode }: RegisterType) => {
       setRequesting(true);
       try {
         loginSuccess(
           await postRegister({
             username,
-            code,
-            password,
+            authCode, // 使用授权码代替密码
             inviterId: localStorage.getItem('inviterId') || undefined
           })
         );
@@ -63,17 +43,6 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
           title: `注册成功`,
           status: 'success'
         });
-        // auto register template app
-        setTimeout(() => {
-          appTemplates.forEach((template) => {
-            postCreateApp({
-              avatar: template.avatar,
-              name: template.name,
-              modules: template.modules,
-              type: template.type
-            });
-          });
-        }, 100);
       } catch (error: any) {
         toast({
           title: error.message || '注册异常',
@@ -96,48 +65,9 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
             bg={'myGray.50'}
             placeholder="邮箱/手机号"
             {...register('username', {
-              required: '邮箱/手机号不能为空',
-              pattern: {
-                value:
-                  /(^1[3456789]\d{9}$)|(^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$)/,
-                message: '邮箱/手机号格式错误'
-              }
+              required: '邮箱/手机号不能为空'
             })}
           ></Input>
-        </FormControl>
-        <FormControl
-          mt={6}
-          isInvalid={!!errors.code}
-          display={'flex'}
-          alignItems={'center'}
-          position={'relative'}
-        >
-          <Input
-            bg={'myGray.50'}
-            flex={1}
-            maxLength={8}
-            placeholder="验证码"
-            {...register('code', {
-              required: '验证码不能为空'
-            })}
-          ></Input>
-          <Box
-            position={'absolute'}
-            right={3}
-            zIndex={1}
-            fontSize={'sm'}
-            {...(codeCountDown > 0
-              ? {
-                  color: 'myGray.500'
-                }
-              : {
-                  color: 'primary.700',
-                  cursor: 'pointer',
-                  onClick: onclickSendCode
-                })}
-          >
-            {sendCodeText}
-          </Box>
         </FormControl>
         <FormControl mt={6} isInvalid={!!errors.password}>
           <Input
@@ -166,6 +96,18 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
               validate: (val) => (getValues('password') === val ? true : '两次密码不一致')
             })}
           ></Input>
+        <FormControl mt={8} isInvalid={!!errors.authCode}>
+          <Input
+            type={'text'}
+            placeholder="授权码"
+            size={['md', 'lg']}
+            {...register('authCode', {
+              required: '授权码不能为空'
+            })}
+          ></Input>
+          <FormErrorMessage position={'absolute'} fontSize="xs">
+            {!!errors.authCode && errors.authCode.message}
+          </FormErrorMessage>
         </FormControl>
         <Button
           type="submit"
