@@ -3,7 +3,10 @@ import { FormControl, Box, Input, Button, FormErrorMessage, Flex } from '@chakra
 import { useForm } from 'react-hook-form';
 import { PageTypeEnum } from '@/constants/user';
 import { postRegister } from '@/web/support/user/api';
+import type { ResLogin } from '@/global/support/api/userRes';
 import { useToast } from '@/web/common/hooks/useToast';
+import { postCreateApp } from '@/web/core/app/api';
+import { appTemplates } from '@/web/core/app/templates';
 import { feConfigs } from '@/web/common/system/staticData';
 
 interface Props {
