@@ -7,7 +7,8 @@ import { UserType } from '@fastgpt/global/support/user/type.d';
 import type {
   FastLoginProps,
   OauthLoginProps,
-  PostLoginProps
+  PostLoginProps,
+  PostRegisterProps
 } from '@fastgpt/global/support/user/api.d';
 
 export const sendAuthCode = (data: {
@@ -23,22 +24,11 @@ export const oauthLogin = (params: OauthLoginProps) =>
 export const postFastLogin = (params: FastLoginProps) =>
   POST<ResLogin>('/plusApi/support/user/account/login/fastLogin', params);
 
-export const postRegister = ({
-  username,
-  password,
-  code,
-  inviterId
-}: {
-  username: string;
-  code: string;
-  password: string;
-  inviterId?: string;
-}) =>
-  POST<ResLogin>(`/plusApi/support/user/account/register/emailAndPhone`, {
-    username,
-    code,
-    inviterId,
-    password: hashStr(password)
+
+  export const postRegister = (props: PostRegisterProps) =>
+  POST<ResLogin>('/user/account/register', {
+    ...props,
+    password: hashStr(props.password)
   });
 
 export const postFindPassword = ({

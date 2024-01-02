@@ -13,6 +13,8 @@ interface Props {
 
 interface RegisterType {
   username: string;
+  password: string;
+  password2: string;
   authCode: string;  // 授权码字段
 }
 
@@ -29,12 +31,13 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
   const [requesting, setRequesting] = useState(false);
 
   const onclickRegister = useCallback(
-    async ({ username, authCode }: RegisterType) => {
+    async ({ username, password, password2, authCode }: RegisterType) => {
       setRequesting(true);
       try {
         loginSuccess(
           await postRegister({
             username,
+            password,
             authCode, // 使用授权码代替密码
             inviterId: localStorage.getItem('inviterId') || undefined
           })

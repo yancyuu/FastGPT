@@ -7,17 +7,17 @@ import type { PostRegisterProps } from '@fastgpt/global/support/user/api.d';
 export default async function registerHandler(req: NextApiRequest, res: NextApiResponse) {
   try {
     await connectToDatabase();
-    const { username, email, authorizationCode } = req.body as PostRegisterProps;
+    const { username, email, authCode } = req.body as PostRegisterProps;
 
     // 从环境变量获取有效的授权码列表
     const validAuthorizationCodes = process.env.REGISTRATION_AUTH_CODE?.split(',') || [];
 
-    if (!username || !email || !authorizationCode) {
+    if (!username || !email || ! authCode) {
       throw new Error('缺少必要参数');
     }
 
     // 检查授权码是否在有效列表中
-    if (!validAuthorizationCodes.includes(authorizationCode)) {
+    if (!validAuthorizationCodes.includes(authCode)) {
       throw new Error('无效的授权码');
     }
 
