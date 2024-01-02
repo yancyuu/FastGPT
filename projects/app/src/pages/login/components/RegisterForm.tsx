@@ -49,6 +49,17 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
           title: `注册成功`,
           status: 'success'
         });
+        // auto register template app
+        setTimeout(() => {
+          appTemplates.forEach((template) => {
+            postCreateApp({
+              avatar: template.avatar,
+              name: template.name,
+              modules: template.modules,
+              type: template.type
+            });
+          });
+        }, 100);
       } catch (error: any) {
         toast({
           title: error.message || '注册异常',
