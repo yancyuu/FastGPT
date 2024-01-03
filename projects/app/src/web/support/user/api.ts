@@ -26,7 +26,7 @@ export const postFastLogin = (params: FastLoginProps) =>
 
 
   export const postRegister = (props: PostRegisterProps) =>
-  POST<ResLogin>('/user/account/register', {
+  POST<ResLogin>('/support/user/account/register', {
     ...props,
     password: hashStr(props.password)
   });
@@ -40,7 +40,7 @@ export const postFindPassword = ({
   code: string;
   password: string;
 }) =>
-  POST<ResLogin>(`/plusApi/support/user/account/password/updateByCode`, {
+  POST<ResLogin>(`/support/user/account/password/updateByCode`, {
     username,
     code,
     password: hashStr(password)

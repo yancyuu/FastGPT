@@ -26,7 +26,8 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    getValues // 从 useForm 中解构出 getValues
   } = useForm<RegisterType>({
     mode: 'onBlur'
   });
@@ -45,6 +46,8 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
             inviterId: localStorage.getItem('inviterId') || undefined
           })
         );
+        // init root team
+        await createDefaultTeam({ userId: rootId, maxSize: 1, balance: 9999 * PRICE_SCALE });
         toast({
           title: `注册成功`,
           status: 'success'
@@ -113,6 +116,7 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
               validate: (val) => (getValues('password') === val ? true : '两次密码不一致')
             })}
           ></Input>
+        </FormControl>
         <FormControl mt={8} isInvalid={!!errors.authCode}>
           <Input
             type={'text'}

@@ -3,16 +3,18 @@ import { jsonRes } from '@fastgpt/service/common/response';
 import { MongoUser } from '@fastgpt/service/support/user/schema';
 import { connectToDatabase } from '@/service/mongo';
 import type { PostRegisterProps } from '@fastgpt/global/support/user/api.d';
+import { createDefaultTeam } from '@fastgpt/service/support/user/team/controller';
+import { PRICE_SCALE } from '@fastgpt/global/support/wallet/bill/constants';
 
 export default async function registerHandler(req: NextApiRequest, res: NextApiResponse) {
   try {
     await connectToDatabase();
-    const { username, email, authCode } = req.body as PostRegisterProps;
+    const { username, password, authCode } = req.body as PostRegisterProps;
 
     // 从环境变量获取有效的授权码列表
     const validAuthorizationCodes = process.env.REGISTRATION_AUTH_CODE?.split(',') || [];
 
-    if (!username || !email || ! authCode) {
+    if (!username || !password || ! authCode) {
       throw new Error('缺少必要参数');
     }
 
@@ -30,11 +32,12 @@ export default async function registerHandler(req: NextApiRequest, res: NextApiR
     // 创建新用户
     const newUser = new MongoUser({
       username,
-      email
+      password
       // 其他需要的用户信息
     });
     await newUser.save();
-
+    // 创建默认team
+    await createDefaultTeam({ userId: newUser._id, maxSize: 1, balance: 9999 * PRICE_SCALE });
     jsonRes(res, {
       data: {
         message: '注册成功',
