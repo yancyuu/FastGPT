@@ -1,18 +1,18 @@
 ---
 title: '快速开始本地开发'
-description: '对 FastGPT 进行开发调试'
+description: '对 LazyGPT 进行开发调试'
 icon: 'developer_guide'
 draft: false
 toc: true
 weight: 705
 ---
 
-本文档介绍了如何设置开发环境以构建和测试 [FastGPT](https://fastgpt.run)。
+本文档介绍了如何设置开发环境以构建和测试 [LazyGPT](https://fastgpt.run)。
 
 
 ## 前置依赖项
 
-您需要在计算机上安装和配置以下依赖项才能构建 [FastGPT](https://fastgpt.run)：
+您需要在计算机上安装和配置以下依赖项才能构建 [LazyGPT](https://fastgpt.run)：
 
 - [Git](http://git-scm.com/)
 - [Docker](https://www.docker.com/)（构建镜像）
@@ -28,19 +28,19 @@ weight: 705
 
 ### 1. Fork 存储库
 
-您需要 Fork [存储库](https://github.com/labring/FastGPT)。
+您需要 Fork [存储库](https://github.com/labring/LazyGPT)。
 
 ### 2. 克隆存储库
 
 克隆您在 GitHub 上 Fork 的存储库：
 
 ```
-git clone git@github.com:<github_username>/FastGPT.git
+git clone git@github.com:<github_username>/LazyGPT.git
 ```
 
 **目录简要说明**
 
-1. `projects` 目录下为 FastGPT 应用代码。其中 `app` 为 FastGPT 核心应用。（后续可能会引入其他应用）
+1. `projects` 目录下为 LazyGPT 应用代码。其中 `app` 为 LazyGPT 核心应用。（后续可能会引入其他应用）
 2. NextJS 框架前后端放在一起，API 服务位于 `src/pages/api` 目录内。
 3. `packages` 目录为共用代码，通过 workspace 被注入到 `projects` 中，已配置 monorepo 自动注入，无需额外打包。
 
@@ -88,11 +88,11 @@ docker build -t dockername/fastgpt --build-arg name=app .
 
 ## 提交代码至开源仓库
 
-1. 确保你的代码是 Fork [FastGPT](https://github.com/labring/FastGPT) 仓库
+1. 确保你的代码是 Fork [LazyGPT](https://github.com/labring/LazyGPT) 仓库
 2. 尽可能少量的提交代码，每次提交仅解决一个问题。
-3. 向 FastGPT 的 main 分支提交一个 PR，提交请求后，FastGPT 团队/社区的其他人将与您一起审查它。
+3. 向 LazyGPT 的 main 分支提交一个 PR，提交请求后，LazyGPT 团队/社区的其他人将与您一起审查它。
 
-如果遇到问题，比如合并冲突或不知道如何打开拉取请求，请查看 GitHub 的[拉取请求教程](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests)，了解如何解决合并冲突和其他问题。一旦您的 PR 被合并，您将自豪地被列为[贡献者表](https://github.com/labring/FastGPT/graphs/contributors)中的一员。
+如果遇到问题，比如合并冲突或不知道如何打开拉取请求，请查看 GitHub 的[拉取请求教程](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests)，了解如何解决合并冲突和其他问题。一旦您的 PR 被合并，您将自豪地被列为[贡献者表](https://github.com/labring/LazyGPT/graphs/contributors)中的一员。
 
 
 

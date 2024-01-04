@@ -1,6 +1,6 @@
 ---
 title: "新 HTTP 模块"
-description: "FastGPT HTTP 模块介绍"
+description: "LazyGPT HTTP 模块介绍"
 icon: "http"
 draft: false
 toc: true
@@ -140,7 +140,7 @@ curl --location --request POST 'http://xxxx.com' \
 
 ## GET 示例
 
-GET 中，不推荐使用嵌套参数，否则会出现奇怪的问题。此外，GET 请求中，FastGPT 会将参数扁平化，不会将自定义参单独抽到 data 中，同时全局变量也会扁平化，因此需要注意字段 key 是否冲突。
+GET 中，不推荐使用嵌套参数，否则会出现奇怪的问题。此外，GET 请求中，LazyGPT 会将参数扁平化，不会将自定义参单独抽到 data 中，同时全局变量也会扁平化，因此需要注意字段 key 是否冲突。
 
 **自定义入参**
 

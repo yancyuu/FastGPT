@@ -1,41 +1,38 @@
 ---
-title: '线上版定价'
-description: 'FastGPT 线上版定价'
+title: '独立 ONEAPI 管理端'
+description: '独立 ONEAPI 管理端'
 icon: 'currency_yen'
 draft: false
 toc: true
 weight: 1200
 ---
 
-## Tokens 说明
-[OpenAI 的 API 官方计费模式](https://openai.com/pricing#language-models)为：按每次 API 请求内容和返回内容 tokens 长度来定价。每个模型具有不同的计价方式，以每 1,000 个 tokens 消耗为单位定价。其中 1,000 个 tokens 约为 900 个英文，约 600 个中文（不是很准确，与上下长度有关，相同的词出现越多，词:Tokens 的比例越大）。平台的 tokens 数量计算算法与 OpenAI 一致，您可以随时通过「使用记录」来查看余额消耗明细的说明，来对比计算是否一致。
 
-![](/imgs/fastgpt-price.png)
+## OneAPI 简介
+OneAPI 为用户提供了一个方便、快捷的方式来访问和管理各种大型AI模型。我们已经部署好了这个服务，用户可以即用即付，无需自己部署和维护。
 
+### 功能亮点
+- ✨ 支持多种大模型：包括 OpenAI ChatGPT 系列模型、Anthropic Claude 系列模型等
+- 🚀 开箱即用：已部署好的服务，用户可以直接使用
+- ⚙️ 定制化设置：支持配置镜像和第三方代理服务
+- 🔄 负载均衡和stream模式：确保高效和流畅的使用体验
+- 🔒 安全和合规：遵循相关法律法规，确保合法合规使用
 
-## FastGPT 线上计费
+### 即用即付
+OneAPI 采用即用即付的方式，您可以根据实际使用情况支付费用，无需担心资源浪费。支持多种支付方式，方便快捷。
 
-使用: [https://fastgpt.run](https://fastgpt.run) 或  [https://ai.fastgpt.in](https://ai.fastgpt.in) 只需仅按 Tokens 使用数量扣费即可。可在 账号-使用记录 中查看具体使用情况，以下是详细的计费表（最新定价以线上表格为准，可在点击充值后实时获取）：
+### 快速开始
+使用 OneAPI 非常简单，只需通过我们的界面添加您的注册登录，然后在APIKEY密钥界面创建密钥，并将api密钥输入到lazygpt的配置管理中，即可开始使用各种大模型。
 
-{{< table "table-hover table-striped-columns" >}}
-| 计费项                 | 价格: 元/ 1K tokens（包含上下文） |
-| ---------------------- | --------------------------------- |
-| 知识库 - 索引          | 0.002                             |
-| 文件 QA 拆分           | 0.03                              |
-| FastAI-4k - 对话       | 0.015                             |
-| FastAI-16k - 对话      | 0.03                              |
-| FastAI-Plus-8k - 对话  | 0.45                              |
-| FastAI-Plus-32k - 对话 | 0.85                              |
-| 文心一言 - 对话        | 0.012                             |
-| 星火2.0 - 对话         | 0.01                              |
-| chatglm_pro - 对话     | 0.01                              |
-| 通义千问 - 对话         | 0.01                              |
-| 问题分类         | 0.03                             |
-| 内容提取         | 0.03                             |
-| 下一步指引         | 0.015                              |
+## 安全和合规
+OneAPI 是一个开源项目，使用者必须遵循 OpenAI 的使用条款和法律法规，不得用于非法用途。请确保您的使用符合《生成式人工智能服务管理暂行办法》的规定。
 
-{{< /table >}}
+## 功能和支持
+- 🌍 多机部署：确保高可用性和负载均衡
+- 🔑 令牌和兑换码管理：方便的账户管理和充值方式
+- 👥 用户分组和渠道分组：满足不同用户的需求
+- 🎨 绘图接口：扩展您的创造力
+- 🌐 Cloudflare AI Gateway支持：提升访问速度和稳定性
 
-{{% alert context="warning" %}}
-FastAI-Plus（也就是 GPT-4，你懂得） 系列模型 OpenAI 的定价高于 3.5 **几十倍**。如果您使用模型的场景字数较多，使用 FastAI-Plus 模型将产生非常大的消耗，FastAI-Plus 模型分为两个版本，8K token 内容上限和 32K token 内容上限，这两个版本请求响应的价格均不同。
-{{% /alert %}}
+## 如何使用
+访问我们的网站 [OneAPI 官方网站](https://oneapi.yunka.sale)，注册账户并开始您的AI旅程。我们提供详尽的文档和指南，帮助您快速上手。

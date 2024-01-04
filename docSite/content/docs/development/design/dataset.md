@@ -1,7 +1,7 @@
 ---
 weight: 961
 title: "数据集"
-description: "FastGPT 数据集中文件与数据的设计方案"
+description: "LazyGPT 数据集中文件与数据的设计方案"
 icon: dataset
 draft: false
 images: []
@@ -9,7 +9,7 @@ images: []
 
 ## 文件与数据的关系
 
-在 FastGPT 中，文件会通过 MongoDB 的 FS 存储，而具体的数据会通过 PostgreSQL 存储，PG 中的数据会有一列 file_id，关联对应的文件。考虑到旧版本的兼容，以及手动输入、标注数据等，我们给 file_id 增加了一些特殊的值，如下：
+在 LazyGPT 中，文件会通过 MongoDB 的 FS 存储，而具体的数据会通过 PostgreSQL 存储，PG 中的数据会有一列 file_id，关联对应的文件。考虑到旧版本的兼容，以及手动输入、标注数据等，我们给 file_id 增加了一些特殊的值，如下：
 
 - manual: 手动输入
 - mark: 手动标注的数据

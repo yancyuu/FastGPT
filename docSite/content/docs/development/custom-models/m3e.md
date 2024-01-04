@@ -1,6 +1,6 @@
 ---
 title: '接入 M3E 向量模型'
-description: ' 将 FastGPT 接入私有化模型 M3E'
+description: ' 将 LazyGPT 接入私有化模型 M3E'
 icon: 'model_training'
 draft: false
 toc: true
@@ -9,7 +9,7 @@ weight: 920
 
 ## 前言
 
-FastGPT 默认使用了 openai 的 embedding 向量模型，如果你想私有部署的话，可以使用 M3E 向量模型进行替换。M3E 向量模型属于小模型，资源使用不高，CPU 也可以运行。下面教程是基于 “睡大觉” 同学提供的一个的镜像。
+LazyGPT 默认使用了 openai 的 embedding 向量模型，如果你想私有部署的话，可以使用 M3E 向量模型进行替换。M3E 向量模型属于小模型，资源使用不高，CPU 也可以运行。下面教程是基于 “睡大觉” 同学提供的一个的镜像。
 
 ## 部署镜像
 
@@ -46,7 +46,7 @@ curl --location --request POST 'https://domain/v1/embeddings' \
 
 Authorization 为 sk-key。model 为刚刚在 One API 填写的自定义模型。
 
-## 接入 FastGPT
+## 接入 LazyGPT
 
 修改 config.json 配置文件，在 VectorModels 中加入 M3E 模型：
 

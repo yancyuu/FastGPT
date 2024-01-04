@@ -1,6 +1,6 @@
 ---
 title: "指定回复"
-description: "FastGPT 指定回复模块介绍"
+description: "LazyGPT 指定回复模块介绍"
 icon: "reply"
 draft: false
 toc: true

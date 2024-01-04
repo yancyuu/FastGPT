@@ -1,6 +1,6 @@
 ---
 title: "用户问题"
-description: "FastGPT 用户问题模块介绍"
+description: "LazyGPT 用户问题模块介绍"
 icon: "input"
 draft: false
 toc: true

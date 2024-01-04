@@ -23,15 +23,9 @@ const Footer = () => {
             }
           },
           {
-            label: 'Sealos',
+            label: '配套API管理端OneAPI',
             onClick: () => {
-              window.open('https://github.com/labring/sealos', '_blank');
-            }
-          },
-          {
-            label: 'Laf',
-            onClick: () => {
-              window.open('https://github.com/labring/laf', '_blank');
+              window.open('https://oneapi.yunka.sale', '_blank');
             }
           }
         ]
@@ -39,12 +33,12 @@ const Footer = () => {
       {
         label: t('home.Footer Developer'),
         child: [
-          {
-            label: t('home.Footer Git'),
-            onClick: () => {
-              window.open('https://github.com/labring/FastGPT', '_blank');
-            }
-          },
+          // {
+          //   label: t('home.Footer Git'),
+          //   onClick: () => {
+          //     window.open('https://github.com/labring/FastGPT', '_blank');
+          //   }
+          // },
           {
             label: t('home.Footer Docs'),
             onClick: () => {
@@ -56,12 +50,12 @@ const Footer = () => {
       {
         label: t('home.Footer Support'),
         child: [
-          {
-            label: t('home.Footer Feedback'),
-            onClick: () => {
-              window.open('https://github.com/labring/FastGPT/issues', '_blank');
-            }
-          },
+          // {
+          //   label: t('home.Footer Feedback'),
+          //   onClick: () => {
+          //     window.open('https://github.com/labring/FastGPT/issues', '_blank');
+          //   }
+          // },
           {
             label: t('home.Community'),
             onClick: () => {

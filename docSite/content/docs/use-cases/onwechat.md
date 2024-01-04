@@ -1,6 +1,6 @@
 ---
 title: "对接 chatgpt-on-wechat"
-description: "FastGPT 对接 chatgpt-on-wechat"
+description: "LazyGPT 对接 chatgpt-on-wechat"
 icon: "chat"
 draft: false
 toc: true
@@ -11,7 +11,7 @@ weight: 504
 
 [chatgpt-on-wechat GitHub 地址](https://github.com/zhayujie/chatgpt-on-wechat)
 
-由于 FastGPT 的 API 接口和 OpenAI 的规范一致，可以无需变更原来的应用即可使用 FastGPT 上编排好的应用。API 使用可参考 [这篇文章](/docs/use-cases/openapi/)。编排示例，可参考 [高级编排介绍](/docs/workflow/intro)
+由于 LazyGPT 的 API 接口和 OpenAI 的规范一致，可以无需变更原来的应用即可使用 LazyGPT 上编排好的应用。API 使用可参考 [这篇文章](/docs/use-cases/openapi/)。编排示例，可参考 [高级编排介绍](/docs/workflow/intro)
 
 ## 1. 获取 OpenAPI 秘钥
 
@@ -26,7 +26,7 @@ weight: 504
 
 ## 3. 创建 docker-compose.yml 文件
 
-只需要修改 `OPEN_AI_API_KEY` 和 `OPEN_AI_API_BASE` 两个环境变量即可。其中 `OPEN_AI_API_KEY` 为第一步获取的秘钥，`OPEN_AI_API_BASE` 为 FastGPT 的 OpenAPI 地址，例如：`https://fastgpt.run/api/v1`。
+只需要修改 `OPEN_AI_API_KEY` 和 `OPEN_AI_API_BASE` 两个环境变量即可。其中 `OPEN_AI_API_KEY` 为第一步获取的秘钥，`OPEN_AI_API_BASE` 为 LazyGPT 的 OpenAPI 地址，例如：`https://fastgpt.run/api/v1`。
 
 随便找一个目录，创建一个 docker-compose.yml 文件，将下面的代码复制进去。
 
@@ -70,4 +70,4 @@ docker-compose up -d
 ```
 
 * 运行成功后会提示扫码登录
-* 随便找个账号，私信发送: bot问题  会将 问题 传到 FastGPT 进行回答。
+* 随便找个账号，私信发送: bot问题  会将 问题 传到 LazyGPT 进行回答。

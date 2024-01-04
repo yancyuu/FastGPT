@@ -28,7 +28,7 @@ const Navbar = () => {
             key: 'Commercial',
             onClick: () => {
               window.open(
-                'https://fael3z0zfze.feishu.cn/share/base/form/shrcnRxj3utrzjywsom96Px4sud',
+                'https://qh5pw4yu10.feishu.cn/share/base/form/shrcngkwo9x1QTfefKK51SyvgxX',
                 '_blank'
               );
             }

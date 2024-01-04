@@ -1,6 +1,6 @@
 ---
 title: "文本加工"
-description: "FastGPT 文本加工模块介绍"
+description: "LazyGPT 文本加工模块介绍"
 icon: "input"
 draft: false
 toc: true

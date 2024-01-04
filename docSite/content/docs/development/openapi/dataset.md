@@ -1,6 +1,6 @@
 ---
 title: '知识库接口'
-description: 'FastGPT OpenAPI 知识库接口'
+description: 'LazyGPT OpenAPI 知识库接口'
 icon: 'dataset'
 draft: false
 toc: true
@@ -77,9 +77,9 @@ curl --location --request POST 'https://fastgpt.run/api/core/dataset/data/pushDa
 {{< tab tabName="参数说明" >}}
 {{< markdownify >}}
 
-需要先了解 FastGPT 的多路索引概念：
+需要先了解 LazyGPT 的多路索引概念：
 
-在 FastGPT 中，你可以为一组数据创建多个索引，如果不指定索引，则系统会自动取对应的 chunk 作为索引。例如前面的请求示例中：
+在 LazyGPT 中，你可以为一组数据创建多个索引，如果不指定索引，则系统会自动取对应的 chunk 作为索引。例如前面的请求示例中：
 
 `q：你是谁？a:我是FastGPT助手` 它的`indexes`属性为空，意味着不自定义索引，而是使用默认的索引（你是谁？\n我是FastGPT助手）。
 

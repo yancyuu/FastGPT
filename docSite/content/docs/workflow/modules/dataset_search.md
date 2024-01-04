@@ -1,6 +1,6 @@
 ---
 title: '知识库搜索'
-description: 'FastGPT AI 知识库搜索模块介绍'
+description: 'LazyGPT AI 知识库搜索模块介绍'
 icon: 'chat'
 draft: false
 toc: true

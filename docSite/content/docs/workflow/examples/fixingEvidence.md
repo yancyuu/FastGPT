@@ -114,11 +114,11 @@ weight: 401
         "value": "gpt-3.5-turbo",
         "list": [
           {
-            "label": "FastGPT-4k",
+            "label": "LazyGPT-4k",
             "value": "gpt-3.5-turbo"
           },
           {
-            "label": "FastGPT-16k",
+            "label": "LazyGPT-16k",
             "value": "gpt-3.5-turbo-16k"
           },
           {
@@ -126,7 +126,7 @@ weight: 401
             "value": "ERNIE-Bot"
           },
           {
-            "label": "FastGPT-Plus",
+            "label": "LazyGPT-Plus",
             "value": "gpt-4"
           },
           {

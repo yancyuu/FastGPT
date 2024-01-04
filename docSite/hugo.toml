@@ -7,12 +7,12 @@ enableGitInfo = false # N.B. .GitInfo does not currently function with git submo
 defaultContentLanguage = 'zh-cn'
 [languages]
   [languages.zh-cn]
-    title = "FastGPT"
+    title = "LazyGPT"
     languageName = "简体中文"
     #contentDir = "content/zh-cn"
     weight = 10
   [languages.en]
-    title = "FastGPT Docs"
+    title = "LazyGPT Docs"
     languageName = "English"
     contentDir = "content/en"
     weight = 10
@@ -60,11 +60,11 @@ defaultContentLanguage = 'zh-cn'
   mono_font       = "JetBrains Mono" # Default is System font
 
     [params.footer]
-        copyright = "© :YEAR: the FastGPT Authors."
+        copyright = "© :YEAR: the LazyGPT Authors."
         version = false # includes git commit info
 
     [params.social]
-        github = "labring/FastGPT"        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
+        github = "labring/LazyGPT"        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
         # twitter = ""       # YOUR_TWITTER_ID
         # instagram = "colinwilson"     # YOUR_INSTAGRAM_ID
         # rss = true                    # show rss icon with link
@@ -84,7 +84,7 @@ defaultContentLanguage = 'zh-cn'
         prismTheme      = "lotusdocs"                           # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario
 
         # gitinfo
-        repoURL         = "https://github.com/labring/FastGPT"  # Git repository URL for your site
+        repoURL         = "https://github.com/labring/LazyGPT"  # Git repository URL for your site
         repoBranch      = "main"                           # Name of your Git repository branch
         editPage        = true                                # enable 'Edit this page' feature - default false
         lastMod         = false                                # enable 'Last modified' date on pages - default false

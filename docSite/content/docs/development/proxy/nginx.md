@@ -88,7 +88,7 @@ weight: 951
 
 填写完毕后，点击右上角的「部署」，即可完成部署。
 
-## 修改 FastGPT 环境变量
+## 修改 LazyGPT 环境变量
 
 1. 进入刚刚部署应用的详情，复制外网地址
 
@@ -96,7 +96,7 @@ weight: 951
    
    ![](/imgs/sealos7.png)
 
-2. 修改环境变量（是 FastGPT 的环境变量，不是 Sealos 的）：
+2. 修改环境变量（是 LazyGPT 的环境变量，不是 Sealos 的）：
 
    ```bash
    OPENAI_BASE_URL=https://tgohwtdlrmer.cloud.sealos.io/openai/v1

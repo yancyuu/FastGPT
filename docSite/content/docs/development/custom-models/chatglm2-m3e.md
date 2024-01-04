@@ -1,6 +1,6 @@
 ---
 title: '接入 ChatGLM2-m3e 模型'
-description: ' 将 FastGPT 接入私有化模型 ChatGLM2和m3e-large'
+description: ' 将 LazyGPT 接入私有化模型 ChatGLM2和m3e-large'
 icon: 'model_training'
 draft: false
 toc: true
@@ -9,7 +9,7 @@ weight: 930
 
 ## 前言
 
-FastGPT 默认使用了 OpenAI 的 LLM 模型和向量模型，如果想要私有化部署的话，可以使用 ChatGLM2 和 m3e-large 模型。以下是由用户@不做了睡大觉 提供的接入方法。该镜像直接集成了 M3E-Large 和 ChatGLM2-6B 模型，可以直接使用。
+LazyGPT 默认使用了 OpenAI 的 LLM 模型和向量模型，如果想要私有化部署的话，可以使用 ChatGLM2 和 m3e-large 模型。以下是由用户@不做了睡大觉 提供的接入方法。该镜像直接集成了 M3E-Large 和 ChatGLM2-6B 模型，可以直接使用。
 
 ## 部署镜像
 
@@ -57,7 +57,7 @@ curl --location --request POST 'https://domain/v1/chat/completions' \
 
 Authorization 为 sk-aaabbbcccdddeeefffggghhhiiijjjkkk。model 为刚刚在 One API 填写的自定义模型。
 
-## 接入 FastGPT
+## 接入 LazyGPT
 
 修改 config.json 配置文件，在 ChatModels 中加入 chatglm2, 在 VectorModels 中加入 M3E 模型：
 

@@ -1,6 +1,6 @@
 ---
 title: '对话接口'
-description: 'FastGPT OpenAPI 对话接口'
+description: 'LazyGPT OpenAPI 对话接口'
 icon: 'chat'
 draft: false
 toc: true

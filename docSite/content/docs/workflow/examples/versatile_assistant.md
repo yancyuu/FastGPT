@@ -50,7 +50,7 @@ weight: 406
 {"success":true,"city":"徐州市","data":[{"date":"2023-09-21","week":"星期四","type":"多云","low":"14°C","high":"24°C","fengxiang":"东北风","fengli":"3级","night":{"type":"多云","fengxiang":"南风","fengli":"3级"}},{"date":"2023-09-22","week":"星期五","type":"阴","low":"19°C","high":"25°C","fengxiang":"东风","fengli":"3级","night":{"type":"阴","fengxiang":"东风","fengli":"3级"}},{"date":"2023-09-23","week":"星期六","type":"小雨","low":"20°C","high":"23°C","fengxiang":"东北风","fengli":"3级","night":{"type":"小雨","fengxiang":"东北风","fengli":"3级"}},{"date":"2023-09-24","week":"星期日","type":"中雨","low":"20°C","high":"23°C","fengxiang":"东风","fengli":"3级","night":{"type":"中雨","fengxiang":"东北风","fengli":"3级"}},{"date":"2023-09-25","week":"星期一","type":"小雨","low":"20°C","high":"24°C","fengxiang":"北风","fengli":"3级","night":{"type":"阴","fengxiang":"北风","fengli":"3级"}},{"date":"2023-09-26","week":"星期二","type":"阴","low":"21°C","high":"27°C","fengxiang":"北风","fengli":"3级","night":{"type":"阴","fengxiang":"北风","fengli":"3级"}},{"date":"2023-09-27","week":"星期三","type":"阴","low":"21°C","high":"25°C","fengxiang":"东北风","fengli":"3级","night":{"type":"阴","fengxiang":"北风","fengli":"3级"}}]}
 ```
 
-3. 由于 FastGPT 的 【http 模块】，对于返回的 json 是以对象形式接收，而我们期望得到的是上述 json 中的“data”字段，而“data”又是数组格式，无法直接丢给【AI 对话】模块（我丢过，非字符串格式报错了，不知道后面会不会更新），所以需要对其做一层中转，将“data”字段转成字符串格式。思路如此，中转方式多样，这里介绍我自己的做法：用 python 起一个服务，来负责对 API 的中转，代码如下（包含了天气接口和微博热搜接口）：
+3. 由于 LazyGPT 的 【http 模块】，对于返回的 json 是以对象形式接收，而我们期望得到的是上述 json 中的“data”字段，而“data”又是数组格式，无法直接丢给【AI 对话】模块（我丢过，非字符串格式报错了，不知道后面会不会更新），所以需要对其做一层中转，将“data”字段转成字符串格式。思路如此，中转方式多样，这里介绍我自己的做法：用 python 起一个服务，来负责对 API 的中转，代码如下（包含了天气接口和微博热搜接口）：
 
 ```python
 from flask import Flask, request, Response

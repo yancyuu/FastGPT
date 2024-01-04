@@ -1,21 +1,21 @@
 ---
 title: " 接入飞书 "
-description: "FastGPT 接入飞书机器人 "
+description: "LazyGPT 接入飞书机器人 "
 icon: "chat"
 draft: false
 toc: true
 weight: 503
 ---
 
-# FastGPT 一分钟接入飞书
+# LazyGPT 一分钟接入飞书
 
 [Feishu OpenAI GitHub 地址](https://github.com/ConnectAI-E/Feishu-OpenAI)
 
 [查看视频教程](https://www.bilibili.com/video/BV1Su4y1r7R3/?spm_id_from=333.999.list.card_archive.click)
 
-由于 FastGPT 的 API 接口和 OpenAI 的规范一致，可以无需变更第三方应用即可使用 FastGPT 上编排好的应用。API 使用可参考 [这篇文章](/docs/use-cases/openapi/)。编排示例，可参考 [高级编排介绍](/docs/workflow/intro)
+由于 LazyGPT 的 API 接口和 OpenAI 的规范一致，可以无需变更第三方应用即可使用 LazyGPT 上编排好的应用。API 使用可参考 [这篇文章](/docs/use-cases/openapi/)。编排示例，可参考 [高级编排介绍](/docs/workflow/intro)
 
-## 1. 获取 FastGPT 的 OpenAPI 秘钥
+## 1. 获取 LazyGPT 的 OpenAPI 秘钥
 
 依次选择应用 -> 「API 访问」，然后点击「API 密钥」来创建密钥。 [参考这篇文章](/docs/use-cases/openapi/)
 
@@ -31,7 +31,7 @@ weight: 503
 
 ![](/imgs/feishu-env.png)
 
-FastGPT 集成**重点参数：**
+LazyGPT 集成**重点参数：**
 
 ```bash
 #上一步FastGPT的OpenAPI 秘钥
@@ -65,6 +65,6 @@ API_URL=https://fastgpt.run/api/openapi
 
 ## 4. 测试飞书机器人
 
-私聊机器人，或者群里艾特它，就可以基于 FastGPT 的应用进行回答啦
+私聊机器人，或者群里艾特它，就可以基于 LazyGPT 的应用进行回答啦
 
 ![](/imgs/feishu-res.png)

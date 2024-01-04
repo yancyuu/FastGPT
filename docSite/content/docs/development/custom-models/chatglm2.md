@@ -1,6 +1,6 @@
 ---
 title: '接入 ChatGLM2-6B'
-description: ' 将 FastGPT 接入私有化模型 ChatGLM2-6B'
+description: ' 将 LazyGPT 接入私有化模型 ChatGLM2-6B'
 icon: 'model_training'
 draft: false
 toc: true
@@ -9,9 +9,9 @@ weight: 910
 
 ## 前言
 
-FastGPT 允许你使用自己的 OpenAI API KEY 来快速调用 OpenAI 接口，目前集成了 GPT-3.5, GPT-4 和 embedding，可构建自己的知识库。但考虑到数据安全的问题，我们并不能将所有的数据都交付给云端大模型。
+LazyGPT 允许你使用自己的 OpenAI API KEY 来快速调用 OpenAI 接口，目前集成了 GPT-3.5, GPT-4 和 embedding，可构建自己的知识库。但考虑到数据安全的问题，我们并不能将所有的数据都交付给云端大模型。
 
-那么如何在 FastGPT 上接入私有化模型呢？本文就以清华的 ChatGLM2 为例，为各位讲解如何在 FastGPT 中接入私有化模型。
+那么如何在 LazyGPT 上接入私有化模型呢？本文就以清华的 ChatGLM2 为例，为各位讲解如何在 LazyGPT 中接入私有化模型。
 
 ## ChatGLM2-6B 简介
 
@@ -46,7 +46,7 @@ ChatGLM2-6B 是开源中英双语对话模型 ChatGLM-6B 的第二代版本，�
 ### 源码部署
 
 1. 根据上面的环境配置配置好环境，具体教程自行 GPT；
-2. 下载 [python 文件](https://github.com/labring/FastGPT/blob/main/files/models/ChatGLM2/openai_api.py)
+2. 下载 [python 文件](https://github.com/labring/LazyGPT/blob/main/files/models/ChatGLM2/openai_api.py)
 3. 在命令行输入命令 `pip install -r requirments.txt`；
 4. 打开你需要启动的 py 文件，在代码的 `verify_token` 方法中配置 token，这里的 token 只是加一层验证，防止接口被人盗用；
 5. 执行命令 `python openai_api.py --model_name 16`。这里的数字根据上面的配置进行选择。
@@ -97,7 +97,7 @@ curl --location --request POST 'https://domain/v1/chat/completions' \
 
 Authorization 为 sk-aaabbbcccdddeeefffggghhhiiijjjkkk。model 为刚刚在 One API 填写的自定义模型。
 
-## 接入 FastGPT
+## 接入 LazyGPT
 
 修改 config.json 配置文件，在 ChatModels 中加入 chatglm2 模型：
 

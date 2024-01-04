@@ -1,13 +1,13 @@
 ---
 title: " 接入微信和企业微信 "
-description: "FastGPT 接入微信和企业微信 "
+description: "LazyGPT 接入微信和企业微信 "
 icon: "chat"
 draft: false
 toc: true
 weight: 506
 ---
 
-# FastGPT 三分钟接入微信/企业微信
+# LazyGPT 三分钟接入微信/企业微信
 私人微信和企业微信接入的方式基本一样，不同的地方会刻意指出。   
 [查看视频教程](https://www.bilibili.com/video/BV1cu411F7FN/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=903c2b09b7412037c2eddc6a8fb9828b)
 ## 创建APIKey
@@ -21,7 +21,7 @@ weight: 506
 
 ![](/imgs/wechat2.png)
 
-继续往下看到 `apikey` 和`服务器根地址`，这里`apikey`填写我们在 FastGPT 应用外部访问中创建的 APIkey，服务器根地址填写官方地址或者私有化部署的地址，这里用官方地址示例，注意要添加`/v1`后缀,填写完毕后保存。
+继续往下看到 `apikey` 和`服务器根地址`，这里`apikey`填写我们在 LazyGPT 应用外部访问中创建的 APIkey，服务器根地址填写官方地址或者私有化部署的地址，这里用官方地址示例，注意要添加`/v1`后缀,填写完毕后保存。
 
 ![](/imgs/wechat3.png)
 

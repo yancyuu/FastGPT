@@ -1,6 +1,6 @@
 ---
 title: "触发器"
-description: "FastGPT 触发器模块介绍"
+description: "LazyGPT 触发器模块介绍"
 icon: "work_history"
 draft: false
 toc: true

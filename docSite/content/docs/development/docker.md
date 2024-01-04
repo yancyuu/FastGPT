@@ -1,6 +1,6 @@
 ---
 title: 'Docker Compose 快速部署'
-description: '使用 Docker Compose 快速部署 FastGPT'
+description: '使用 Docker Compose 快速部署 LazyGPT'
 icon: ''
 draft: false
 toc: true
@@ -17,7 +17,7 @@ weight: 707
 
 ### 2. 多模型支持
 
-FastGPT 使用了 one-api 项目来管理模型池，其可以兼容 OpenAI 、Azure 、国内主流模型和本地模型等。
+LazyGPT 使用了 one-api 项目来管理模型池，其可以兼容 OpenAI 、Azure 、国内主流模型和本地模型等。
 
 可选择 [Sealos 快速部署 OneAPI](/docs/development/one-api)，更多部署方法可参考该项目的 [README](https://github.com/songquanpeng/one-api)，也可以直接通过以下按钮一键部署：
 
@@ -70,17 +70,17 @@ brew install orbstack
 
 ## 二、创建目录并下载 docker-compose.yml
 
-依次执行下面命令，创建 FastGPT 文件并拉取`docker-compose.yml`和`config.json`，执行完后目录下会有 2 个文件。
+依次执行下面命令，创建 LazyGPT 文件并拉取`docker-compose.yml`和`config.json`，执行完后目录下会有 2 个文件。
 
-非 Linux 环境或无法访问外网环境，可手动创建一个目录，并下载下面2个链接的文件: [docker-compose.yml](https://github.com/labring/FastGPT/blob/main/files/deploy/fastgpt/docker-compose.yml),[config.json](https://github.com/labring/FastGPT/blob/main/projects/app/data/config.json)
+非 Linux 环境或无法访问外网环境，可手动创建一个目录，并下载下面2个链接的文件: [docker-compose.yml](https://github.com/labring/LazyGPT/blob/main/files/deploy/fastgpt/docker-compose.yml),[config.json](https://github.com/labring/LazyGPT/blob/main/projects/app/data/config.json)
 
 **注意: `docker-compose.yml` 配置文件中 Mongo 为 5.x，部分服务器不支持，需手动更改其镜像版本为 4.4.24**
 
 ```bash
 mkdir fastgpt
 cd fastgpt
-curl -O https://raw.githubusercontent.com/labring/FastGPT/main/files/deploy/fastgpt/docker-compose.yml
-curl -O https://raw.githubusercontent.com/labring/FastGPT/main/projects/app/data/config.json
+curl -O https://raw.githubusercontent.com/labring/LazyGPT/main/files/deploy/fastgpt/docker-compose.yml
+curl -O https://raw.githubusercontent.com/labring/LazyGPT/main/projects/app/data/config.json
 ```
 
 
@@ -94,7 +94,7 @@ docker-compose pull
 docker-compose up -d
 ```
 
-## 四、访问 FastGPT
+## 四、访问 LazyGPT
 
 目前可以通过 `ip:3000` 直接访问(注意防火墙)。登录用户名为 `root`，密码为`docker-compose.yml`环境变量里设置的 `DEFAULT_ROOT_PSW`。
 
@@ -118,7 +118,7 @@ docker-compose up -d
 ### 如何检查自定义配置文件是否挂载
 
 1. `docker logs fastgpt` 可以查看日志，在启动容器后，第一次请求网页，会进行配置文件读取，可以看看有没有读取成功以及有无错误日志。
-2. `docker exec -it fastgpt sh` 进入 FastGPT 容器，可以通过`ls data`查看目录下是否成功挂载`config.json`文件。可通过`cat data/config.json`查看配置文件。
+2. `docker exec -it fastgpt sh` 进入 LazyGPT 容器，可以通过`ls data`查看目录下是否成功挂载`config.json`文件。可通过`cat data/config.json`查看配置文件。
 
 **可能不生效的原因**
 
@@ -141,7 +141,7 @@ docker-compose 端口定义为：`映射端口:运行端口`。
 
 ### relation "modeldata" does not exist
 
-PG 数据库没有连接上/初始化失败，可以查看日志。FastGPT 会在每次连接上 PG 时进行表初始化，如果报错会有对应日志。
+PG 数据库没有连接上/初始化失败，可以查看日志。LazyGPT 会在每次连接上 PG 时进行表初始化，如果报错会有对应日志。
 
 1. 检查数据库容器是否正常启动
 2. 非 docker 部署的，需要手动安装 pg vector 插件

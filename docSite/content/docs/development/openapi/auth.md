@@ -1,6 +1,6 @@
 ---
 title: 'Api Key 使用与鉴权'
-description: 'FastGPT Api Key 使用与鉴权'
+description: 'LazyGPT Api Key 使用与鉴权'
 icon: 'key'
 draft: false
 toc: true
@@ -9,7 +9,7 @@ weight: 851
 
 ## 使用说明
 
-FasGPT OpenAPI 接口允许你使用 Api Key 进行鉴权，从而操作 FastGPT 上的相关服务和资源，例如：调用应用对话接口、上传知识库数据、搜索测试等等。出于兼容性和安全考虑，并不是所有的接口都允许通过 Api Key 访问。
+FasGPT OpenAPI 接口允许你使用 Api Key 进行鉴权，从而操作 LazyGPT 上的相关服务和资源，例如：调用应用对话接口、上传知识库数据、搜索测试等等。出于兼容性和安全考虑，并不是所有的接口都允许通过 Api Key 访问。
 
 ## 如何查看 BaseURL
 
@@ -19,7 +19,7 @@ FasGPT OpenAPI 接口允许你使用 Api Key 进行鉴权，从而操作 FastGPT
 
 ## 如何获取 Api Key
 
-FastGPT 的 API Key **有 2 类**，一类是全局通用的 key (无法直接调用应用对话)；一类是携带了 AppId 也就是有应用标记的 key (可直接调用应用对话)。
+LazyGPT 的 API Key **有 2 类**，一类是全局通用的 key (无法直接调用应用对话)；一类是携带了 AppId 也就是有应用标记的 key (可直接调用应用对话)。
 
 我们建议，仅操作应用或者对话的相关接口使用 `应用特定key`，其他接口使用 `通用key`。
 

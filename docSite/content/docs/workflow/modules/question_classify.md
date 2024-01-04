@@ -1,6 +1,6 @@
 ---
 title: "问题分类"
-description: "FastGPT 问题分类模块介绍"
+description: "LazyGPT 问题分类模块介绍"
 icon: "quiz"
 draft: false
 toc: true

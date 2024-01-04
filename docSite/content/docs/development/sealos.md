@@ -1,6 +1,6 @@
 ---
 title: "Sealos 一键部署"
-description: "使用 Sealos 一键部署 FastGPT"
+description: "使用 Sealos 一键部署 LazyGPT"
 icon: "cloud"
 draft: false
 toc: true
@@ -15,7 +15,7 @@ Sealos 的服务器在国外，不需要额外处理网络问题，无需服务�
 
 ![](/imgs/sealos1.png)
 
-点击 Sealos 提供的外网地址即可打开 FastGPT 的可视化界面。
+点击 Sealos 提供的外网地址即可打开 LazyGPT 的可视化界面。
 
 ![](/imgs/sealos2.png)
 
@@ -25,14 +25,14 @@ Sealos 的服务器在国外，不需要额外处理网络问题，无需服务�
 
 ## 修改配置文件和环境变量
 
-在 Sealos 中，你可以打开`应用管理`（App Launchpad）看到部署的 FastGPT，可以打开`数据库`（Database）看到对应的数据库。
+在 Sealos 中，你可以打开`应用管理`（App Launchpad）看到部署的 LazyGPT，可以打开`数据库`（Database）看到对应的数据库。
 
-在`应用管理`中，选中 FastGPT，点击变更，可以看到对应的环境变量和配置文件。
+在`应用管理`中，选中 LazyGPT，点击变更，可以看到对应的环境变量和配置文件。
 
 ![](/imgs/fastgptonsealos1.png)
 
 {{% alert icon="🤖 " context="success" %}}
-在 Sealos 上，FastGPT 一共运行了 1 个服务和 2 个数据库，如暂停和删除请注意数据库一同操作。（你可以白天启动，晚上暂停它们，省钱大法）
+在 Sealos 上，LazyGPT 一共运行了 1 个服务和 2 个数据库，如暂停和删除请注意数据库一同操作。（你可以白天启动，晚上暂停它们，省钱大法）
 {{% /alert %}}
 
 ## 更新
@@ -47,13 +47,13 @@ Sealos 的服务器在国外，不需要额外处理网络问题，无需服务�
 
 ### 简介
 
-FastGPT 商业版共包含了3个应用（fastgpt, fastgpt-plus, fastgpt-admin）和2个数据库，使用多 Api Key 时候需要安装 OneAPI（一个应用和一个数据库），总计4个应用和3个数据库。
+LazyGPT 商业版共包含了3个应用（fastgpt, fastgpt-plus, fastgpt-admin）和2个数据库，使用多 Api Key 时候需要安装 OneAPI（一个应用和一个数据库），总计4个应用和3个数据库。
 
 ![](/imgs/onSealos1.png)
 
 点击右侧的详情，可以查看对应应用的详细信息。
 
-### 如何更新/升级 FastGPT
+### 如何更新/升级 LazyGPT
 [升级脚本文档](https://doc.fastgpt.in/docs/development/upgrading/)先看下文档，看下需要升级哪个版本。注意，不要跨版本升级！！！！！
 
 例如，目前是4.5 版本，要升级到4.5.1，就先把镜像版本改成v4.5.1，执行一下升级脚本，等待完成后再继续升级。如果目标版本不需要执行初始化，则可以跳过。
@@ -68,7 +68,7 @@ FastGPT 商业版共包含了3个应用（fastgpt, fastgpt-plus, fastgpt-admin�
 5. 点击变更/重启，会自动拉取最新镜像进行更新
 6. 执行对应版本的初始化脚本
 
-### 如何获取 FastGPT 访问链接
+### 如何获取 LazyGPT 访问链接
 
 打开对应的应用，点击外网访问地址。
 
@@ -101,7 +101,7 @@ FeConfig 参考下面（目前未做可视化）
     "show_openai_account": false,  // 用户可自定义 openai key
     "show_promotion": false, // 邀请好友机制
     "docUrl": "https://doc.fastgpt.in", // 文档基本地址
-    "systemTitle": "FastGPT", // 系统的 title
+    "systemTitle": "LazyGPT", // 系统的 title
     "googleClientVerKey": "", // 谷歌 v3 校验前端凭证
     "isPlus": true, // 直接设置 true    
     "oauth": { // oauth登录
@@ -120,7 +120,7 @@ FeConfig 参考下面（目前未做可视化）
 修改应用的环境变量，增加
 
 ```
-SYSTEM_NAME=FastGPT
+SYSTEM_NAME=LazyGPT
 SYSTEM_FAVICON=/favicon.ico
 HOME_URL=/app/list
 ```

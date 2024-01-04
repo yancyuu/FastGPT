@@ -38,7 +38,7 @@ rules:
   - 'MATCH,DIRECT'
 ```
 
-然后给 FastGPT 添加两个环境变量：
+然后给 LazyGPT 添加两个环境变量：
 
 ```bash
 AXIOS_PROXY_HOST=127.0.0.1

@@ -1,6 +1,6 @@
 ---
 title: "内容提取"
-description: "FastGPT 内容提取模块介绍"
+description: "LazyGPT 内容提取模块介绍"
 icon: "content_paste_go"
 draft: false
 toc: true

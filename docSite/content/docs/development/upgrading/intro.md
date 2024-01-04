@@ -1,13 +1,13 @@
 ---
 title: '升级说明'
-description: 'FastGPT 升级说明'
+description: 'LazyGPT 升级说明'
 icon: 'upgrade'
 draft: false
 toc: true
 weight: 751
 ---
 
-FastGPT 升级包括两个步骤：
+LazyGPT 升级包括两个步骤：
 
 1. 镜像升级
 2. 执行升级初始化脚本
@@ -17,12 +17,12 @@ FastGPT 升级包括两个步骤：
 ## 镜像名
 
 **git版**
-- FastGPT 主镜像：ghcr.io/labring/fastgpt:latest
+- LazyGPT 主镜像：ghcr.io/labring/fastgpt:latest
 - 商业版镜像：ghcr.io/c121914yu/fastgpt-pro:latest
 - Admin 镜像：ghcr.io/c121914yu/fastgpt-admin:latest
 
 **阿里云**
-- FastGPT 主镜像: registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt
+- LazyGPT 主镜像: registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt
 - 商业版镜像：ghcr:registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt-pro
 - Admin 镜像: registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt-admin
 

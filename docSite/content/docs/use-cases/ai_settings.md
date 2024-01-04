@@ -1,13 +1,13 @@
 ---
 title: "AI 高级配置说明"
-description: "FastGPT AI 高级配置说明"
+description: "LazyGPT AI 高级配置说明"
 icon: "sign_language"
 draft: false
 toc: true
 weight: 501
 ---
 
-在 FastGPT 的 AI 对话模块中，有一个 AI 高级配置，里面包含了 AI 模型的参数配置，本文详细介绍这些配置的含义。
+在 LazyGPT 的 AI 对话模块中，有一个 AI 高级配置，里面包含了 AI 模型的参数配置，本文详细介绍这些配置的含义。
 
 ## 返回AI内容
 
@@ -27,7 +27,7 @@ weight: 501
 
 ### AI 对话消息组成
 
-想使用明白这两个变量，首先要了解传递传递给 AI 模型的消息格式。它是一个数组，FastGPT 中这个数组的组成形式为：
+想使用明白这两个变量，首先要了解传递传递给 AI 模型的消息格式。它是一个数组，LazyGPT 中这个数组的组成形式为：
 
 ```json
 [
@@ -46,7 +46,7 @@ Tips: 可以通过点击上下文按键查看完整的上下文组成，便于�
 
 引用模板和引用提示词通常是成对出现，引用提示词依赖引用模板。
 
-FastGPT 知识库采用 QA 对(不一定都是问答格式，仅代表两个变量)的格式存储，在转义成字符串时候会根据**引用模板**来进行格式化。知识库包含多个可用变量： q, a, sourceId（数据的ID）, index(第n个数据), source(数据的集合名、文件名)，score(距离得分，0-1) 可以通过 {{q}} {{a}} {{sourceId}} {{index}} {{source}} {{score}} 按需引入。下面一个模板例子：
+LazyGPT 知识库采用 QA 对(不一定都是问答格式，仅代表两个变量)的格式存储，在转义成字符串时候会根据**引用模板**来进行格式化。知识库包含多个可用变量： q, a, sourceId（数据的ID）, index(第n个数据), source(数据的集合名、文件名)，score(距离得分，0-1) 可以通过 {{q}} {{a}} {{sourceId}} {{index}} {{source}} {{score}} 按需引入。下面一个模板例子：
 
 可以通过 [知识库结构讲解](/docs/use-cases/datasetEngine/) 了解详细的知识库的结构。
 

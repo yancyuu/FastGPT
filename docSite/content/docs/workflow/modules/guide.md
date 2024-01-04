@@ -1,6 +1,6 @@
 ---
 title: "用户引导"
-description: "FastGPT 用户引导模块介绍"
+description: "LazyGPT 用户引导模块介绍"
 icon: "psychology"
 draft: false
 toc: true

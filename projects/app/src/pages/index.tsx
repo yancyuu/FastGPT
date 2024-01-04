@@ -36,11 +36,9 @@ const Home = ({ homeUrl = '/' }: { homeUrl: string }) => {
             <Choice />
           </Box>
         </Box>
-        {feConfigs?.show_git && (
-          <Box bg={'white'}>
-            <Footer />
-          </Box>
-        )}
+        <Box bg={'white'}>
+          <Footer />
+        </Box>
       </Box>
       {homeUrl !== '/' && <Loading bg={'white'} />}
     </>

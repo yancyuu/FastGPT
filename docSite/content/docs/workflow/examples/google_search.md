@@ -1,6 +1,6 @@
 ---
 title: '接入谷歌搜索'
-description: '将 FastGPT 接入谷歌搜索'
+description: '将 LazyGPT 接入谷歌搜索'
 icon: 'search'
 draft: false
 toc: true

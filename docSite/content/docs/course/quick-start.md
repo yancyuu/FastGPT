@@ -1,6 +1,6 @@
 ---
 title: '快速上手'
-description: '快速体验 FastGPT 基础功能'
+description: '快速体验 LazyGPT 基础功能'
 icon: 'rocket_launch'
 draft: false
 toc: true
@@ -13,7 +13,7 @@ weight: 101
 
 开始前，请准备一份测试电子文档，WORD，PDF，TXT，excel，markdown 都可以，比如公司休假制度，不涉密的销售说辞，产品知识等等。
 
-这里使用 FastGPT 中文 README 文件为例。
+这里使用 LazyGPT 中文 README 文件为例。
 
 首先我们需要创建一个知识库。
 

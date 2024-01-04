@@ -1,6 +1,6 @@
 ---
 title: "全局变量"
-description: "FastGPT 全局变量模块介绍"
+description: "LazyGPT 全局变量模块介绍"
 icon: "variables"
 draft: false
 toc: true

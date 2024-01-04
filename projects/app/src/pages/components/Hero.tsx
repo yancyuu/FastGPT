@@ -37,10 +37,11 @@ const Hero = () => {
               bg: 'myGray.800',
               color: 'white'
             }}
-            leftIcon={<MyIcon name={'git'} w={'20px'} />}
-            onClick={() => window.open('https://github.com/labring/FastGPT', '_blank')}
+            leftIcon={<MyIcon name={'apikey'} w={'20px'} />}
+            onClick={() => window.open('https://oneapi.yunka.sale/token', '_blank')}
           >
-            Stars {(gitStar / 1000).toFixed(1)}k
+            {/* Stars {(gitStar / 1000).toFixed(1)}k */}
+            OneAPI
           </Button>
         )}
         <Button

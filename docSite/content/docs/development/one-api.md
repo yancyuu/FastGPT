@@ -7,9 +7,9 @@ toc: true
 weight: 708
 ---
 
-* 默认情况下，FastGPT 只配置了 GPT 的模型，如果你需要接入其他模型，需要进行一些额外配置。
+* 默认情况下，LazyGPT 只配置了 GPT 的模型，如果你需要接入其他模型，需要进行一些额外配置。
 * [One API](https://github.com/songquanpeng/one-api) 是一个 OpenAI 接口管理 & 分发系统，可以通过标准的 OpenAI API 格式访问所有的大模型，开箱即用。
-* FastGPT 可以通过接入 OneAPI 来实现对不同大模型的支持。OneAPI 的部署方法也很简单。
+* LazyGPT 可以通过接入 OneAPI 来实现对不同大模型的支持。OneAPI 的部署方法也很简单。
 
 ## MySQL 版本
 
@@ -68,9 +68,9 @@ BATCH_UPDATE_INTERVAL=60
 创建一个令牌
 ![step7](/imgs/oneapi-step7.png)
 
-### 3. 修改 FastGPT 的环境变量
+### 3. 修改 LazyGPT 的环境变量
 
-有了 One API 令牌后，FastGPT 可以通过修改 `baseurl` 和 `key` 去请求到 One API，再由 One API 去请求不同的模型。修改下面两个环境变量：
+有了 One API 令牌后，LazyGPT 可以通过修改 `baseurl` 和 `key` 去请求到 One API，再由 One API 去请求不同的模型。修改下面两个环境变量：
 
 ```bash
 # 下面的地址是 Sealos 提供的，务必写上 v1， 两个项目都在 sealos 部署时候，https://xxxx.cloud.sealos.io 可以改用内网地址
@@ -87,7 +87,7 @@ CHAT_API_KEY=sk-xxxxxx
 
 ![](/imgs/oneapi-demo1.png)
 
-### 2. 修改 FastGPT 配置文件
+### 2. 修改 LazyGPT 配置文件
 
 可以在 `/projects/app/src/data/config.json` 里找到配置文件（本地开发需要复制成 config.local.json），配置文件中有一项是对话模型配置：
 
@@ -109,4 +109,4 @@ CHAT_API_KEY=sk-xxxxxx
 ],
 ```
 
-添加完后，重启 FastGPT 即可在选择文心一言模型进行对话。
+添加完后，重启 LazyGPT 即可在选择文心一言模型进行对话。

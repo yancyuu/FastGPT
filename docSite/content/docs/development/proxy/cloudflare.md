@@ -7,7 +7,7 @@ toc: true
 weight: 953
 ---
 
-[参考 "不做了睡觉" 的教程](https://gravel-twister-d32.notion.site/FastGPT-API-ba7bb261d5fd4fd9bbb2f0607dacdc9e)
+[参考 "不做了睡觉" 的教程](https://gravel-twister-d32.notion.site/LazyGPT-API-ba7bb261d5fd4fd9bbb2f0607dacdc9e)
 
 **workers 配置文件**
 
@@ -44,7 +44,7 @@ async function handleRequest(request) {
 }
 ```
 
-**修改 FastGPT 的环境变量**
+**修改 LazyGPT 的环境变量**
 
 > 务必别忘了填 v1！
 

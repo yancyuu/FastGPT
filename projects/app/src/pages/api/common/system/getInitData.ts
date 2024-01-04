@@ -43,13 +43,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 const defaultFeConfigs: FastGPTFeConfigsType = {
   show_emptyChat: true,
-  show_git: true,
+  show_git: false,
   show_register: true,
   docUrl: 'https://doc.fastgpt.in',
   openAPIDocUrl: 'https://doc.fastgpt.in/docs/development/openapi',
   systemTitle: 'LazyGPT',
   concatMd:
-    '* 交流 +v:AIGC-Tools',
+    '## 📱 联系我 \
+  感兴趣并想了解更多信息？欢迎添加我的微信，一起交流分享！\
+  - **微信号**: `ToLiveIsToRest` _(点击复制)_\
+  或者，您可以直接扫描下方的二维码添加我为好友:\
+  ![微信二维码](https://your-qr-code-image-url.png)\
+  _期待与您的交流！_',
   limit: {
     exportLimitMinutes: 0
   },

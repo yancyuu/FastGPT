@@ -78,7 +78,7 @@ HTTP 模块允许你调用任意 GET/POST 类型的 HTTP 接口，从而实现�
 
 ## 编排配置
 
-可直接复制，导入到 FastGPT 中。
+可直接复制，导入到 LazyGPT 中。
 
 {{% details title="编排配置" closed="true" %}}
 

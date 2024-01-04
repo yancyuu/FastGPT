@@ -97,13 +97,9 @@ const Share = ({ appId }: { appId: string }) => {
               <Th>名称</Th>
               <Th>金额消耗</Th>
               <Th>返回详情</Th>
-              {feConfigs?.isPlus && (
-                <>
-                  <Th>IP限流（人/分钟）</Th>
-                  <Th>过期时间</Th>
-                  <Th>身份校验</Th>
-                </>
-              )}
+              <Th>IP限流（人/分钟）</Th>
+              <Th>过期时间</Th>
+              <Th>身份校验</Th>
               <Th>最后使用时间</Th>
               <Th></Th>
             </Tr>
@@ -115,21 +111,17 @@ const Share = ({ appId }: { appId: string }) => {
                 <Td>
                   {formatPrice(item.total)}
                   {`${
-                        item.limit && item.limit.credit > -1
-                          ? ` / ${item.limit.credit}元`
-                          : ' / 无限制'
-                      }`
-                  }
+                    item.limit && item.limit.credit > -1 ? ` / ${item.limit.credit}元` : ' / 无限制'
+                  }`}
                 </Td>
                 <Td>{item.responseDetail ? '✔' : '✖'}</Td>
-                    <Td>{item?.limit?.QPM || '-'}</Td>
-                    <Td>
-                      {item?.limit?.expiredTime
-                        ? dayjs(item.limit?.expiredTime).format('YYYY/MM/DD\nHH:mm')
-                        : '-'}
-                    </Td>
-                    <Th>{item?.limit?.hookUrl ? '✔' : '✖'}</Th>
-                )}
+                <Td>{item?.limit?.QPM || '-'}</Td>
+                <Td>
+                  {item?.limit?.expiredTime
+                    ? dayjs(item.limit?.expiredTime).format('YYYY/MM/DD\nHH:mm')
+                    : '-'}
+                </Td>
+                <Td>{item?.limit?.hookUrl ? '✔' : '✖'}</Td>
                 <Td>{item.lastTime ? formatTimeToChatTime(item.lastTime) : '未使用'}</Td>
                 <Td display={'flex'} alignItems={'center'}>
                   <Menu autoSelect={false} isLazy>
@@ -292,76 +284,76 @@ function EditLinkModal({
             })}
           />
         </Flex>
-            <Flex alignItems={'center'} mt={4}>
-              <Flex flex={'0 0 90px'} alignItems={'center'}>
-                QPM
-                <MyTooltip label={t('outlink.QPM Tips' || '')}>
-                  <QuestionOutlineIcon ml={1} />
-                </MyTooltip>
-              </Flex>
-              <Input
-                max={1000}
-                {...register('limit.QPM', {
-                  min: 0,
-                  max: 1000,
-                  valueAsNumber: true,
-                  required: t('outlink.QPM is empty') || ''
-                })}
-              />
-            </Flex>
-            <Flex alignItems={'center'} mt={4}>
-              <Flex flex={'0 0 90px'} alignItems={'center'}>
-                {t('common.Max credit')}
-                <MyTooltip label={t('common.Max credit tips' || '')}>
-                  <QuestionOutlineIcon ml={1} />
-                </MyTooltip>
-              </Flex>
-              <Input
-                {...register('limit.credit', {
-                  min: -1,
-                  max: 1000,
-                  valueAsNumber: true,
-                  required: true
-                })}
-              />
-            </Flex>
-            <Flex alignItems={'center'} mt={4}>
-              <Flex flex={'0 0 90px'} alignItems={'center'}>
-                {t('common.Expired Time')}
-              </Flex>
-              <Input
-                type="datetime-local"
-                defaultValue={
-                  defaultData.limit?.expiredTime
-                    ? dayjs(defaultData.limit?.expiredTime).format('YYYY-MM-DDTHH:mm')
-                    : ''
-                }
-                onChange={(e) => {
-                  setValue('limit.expiredTime', new Date(e.target.value));
-                }}
-              />
-            </Flex>
-            <Flex alignItems={'center'} mt={4}>
-              <Flex flex={'0 0 90px'} alignItems={'center'}>
-                {t('outlink.token auth')}
-                <MyTooltip label={t('outlink.token auth Tips') || ''}>
-                  <QuestionOutlineIcon ml={1} />
-                </MyTooltip>
-              </Flex>
-              <Input
-                placeholder={t('outlink.token auth Tips') || ''}
-                fontSize={'sm'}
-                {...register('limit.hookUrl')}
-              />
-            </Flex>
-            <Link
-              href={getDocPath('/docs/development/openapi/share')}
-              target={'_blank'}
-              fontSize={'sm'}
-              color={'myGray.500'}
-            >
-              {t('outlink.token auth use cases')}
-            </Link>
+        <Flex alignItems={'center'} mt={4}>
+          <Flex flex={'0 0 90px'} alignItems={'center'}>
+            QPM
+            <MyTooltip label={t('outlink.QPM Tips' || '')}>
+              <QuestionOutlineIcon ml={1} />
+            </MyTooltip>
+          </Flex>
+          <Input
+            max={1000}
+            {...register('limit.QPM', {
+              min: 0,
+              max: 1000,
+              valueAsNumber: true,
+              required: t('outlink.QPM is empty') || ''
+            })}
+          />
+        </Flex>
+        <Flex alignItems={'center'} mt={4}>
+          <Flex flex={'0 0 90px'} alignItems={'center'}>
+            {t('common.Max credit')}
+            <MyTooltip label={t('common.Max credit tips' || '')}>
+              <QuestionOutlineIcon ml={1} />
+            </MyTooltip>
+          </Flex>
+          <Input
+            {...register('limit.credit', {
+              min: -1,
+              max: 1000,
+              valueAsNumber: true,
+              required: true
+            })}
+          />
+        </Flex>
+        <Flex alignItems={'center'} mt={4}>
+          <Flex flex={'0 0 90px'} alignItems={'center'}>
+            {t('common.Expired Time')}
+          </Flex>
+          <Input
+            type="datetime-local"
+            defaultValue={
+              defaultData.limit?.expiredTime
+                ? dayjs(defaultData.limit?.expiredTime).format('YYYY-MM-DDTHH:mm')
+                : ''
+            }
+            onChange={(e) => {
+              setValue('limit.expiredTime', new Date(e.target.value));
+            }}
+          />
+        </Flex>
+        <Flex alignItems={'center'} mt={4}>
+          <Flex flex={'0 0 90px'} alignItems={'center'}>
+            {t('outlink.token auth')}
+            <MyTooltip label={t('outlink.token auth Tips') || ''}>
+              <QuestionOutlineIcon ml={1} />
+            </MyTooltip>
+          </Flex>
+          <Input
+            placeholder={t('outlink.token auth Tips') || ''}
+            fontSize={'sm'}
+            {...register('limit.hookUrl')}
+          />
+        </Flex>
+        <Link
+          href={getDocPath('/docs/development/openapi/share')}
+          target={'_blank'}
+          fontSize={'sm'}
+          color={'myGray.500'}
+        >
+          {t('outlink.token auth use cases')}
+        </Link>
 
         <Flex alignItems={'center'} mt={4}>
           <Flex flex={'0 0 90px'} alignItems={'center'}>
