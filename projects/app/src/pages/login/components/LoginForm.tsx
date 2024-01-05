@@ -127,7 +127,7 @@ const LoginForm = ({ setPageType, loginSuccess }: Props) => {
       <Box mt={'42px'}>
         <FormControl isInvalid={!!errors.username}>
           <Input
-            placeholder='邮箱/手机号/用户名'
+            placeholder="邮箱/手机号/用户名"
             size={['md', 'lg']}
             {...register('username', {
               required: '邮箱/手机号/用户名不能为空'

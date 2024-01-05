@@ -14,7 +14,7 @@ export default async function registerHandler(req: NextApiRequest, res: NextApiR
     // 从环境变量获取有效的授权码列表
     const validAuthorizationCodes = process.env.REGISTRATION_AUTH_CODE?.split(',') || [];
 
-    if (!username || !password || ! authCode) {
+    if (!username || !password || !authCode) {
       throw new Error('缺少必要参数');
     }
 

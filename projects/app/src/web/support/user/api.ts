@@ -24,8 +24,7 @@ export const oauthLogin = (params: OauthLoginProps) =>
 export const postFastLogin = (params: FastLoginProps) =>
   POST<ResLogin>('/plusApi/support/user/account/login/fastLogin', params);
 
-
-  export const postRegister = (props: PostRegisterProps) =>
+export const postRegister = (props: PostRegisterProps) =>
   POST<ResLogin>('/support/user/account/register', {
     ...props,
     password: hashStr(props.password)

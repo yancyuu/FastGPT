@@ -18,7 +18,7 @@ interface RegisterType {
   username: string;
   password: string;
   password2: string;
-  authCode: string;  // 授权码字段
+  authCode: string; // 授权码字段
 }
 
 const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
