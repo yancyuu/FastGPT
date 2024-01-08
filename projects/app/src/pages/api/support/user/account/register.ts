@@ -45,9 +45,16 @@ export default async function registerHandler(req: NextApiRequest, res: NextApiR
       }
     });
   } catch (err) {
-    jsonRes(res, {
-      code: 500,
-      error: err.message || '注册过程中发生错误'
-    });
+    if (err instanceof Error) {
+      jsonRes(res, {
+        code: 500,
+        error: err.message
+      });
+    } else {
+      jsonRes(res, {
+        code: 500,
+        error: '注册过程中发生错误'
+      });
+    }
   }
 }
