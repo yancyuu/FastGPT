@@ -47,7 +47,6 @@ const RegisterForm = ({ setPageType, loginSuccess }: Props) => {
           })
         );
         // init root team
-        await createDefaultTeam({ userId: rootId, maxSize: 1, balance: 9999 * PRICE_SCALE });
         toast({
           title: `注册成功`,
           status: 'success'
