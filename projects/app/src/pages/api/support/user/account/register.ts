@@ -38,6 +38,7 @@ export default async function registerHandler(req: NextApiRequest, res: NextApiR
     await newUser.save();
     // 创建默认team
     await createDefaultTeam({ userId: newUser._id, maxSize: 1, balance: 9999 * PRICE_SCALE });
+
     jsonRes(res, {
       data: {
         message: '注册成功',
@@ -45,9 +46,18 @@ export default async function registerHandler(req: NextApiRequest, res: NextApiR
       }
     });
   } catch (err) {
-    jsonRes(res, {
-      code: 500,
-      error: '注册过程中发生错误'
-    });
+    // 检查错误是否为 Error 实例
+    if (err instanceof Error) {
+      jsonRes(res, {
+        code: 500,
+        error: `注册过程中发生错误: ${err.message}`
+      });
+    } else {
+      // 如果错误不是 Error 实例，返回通用错误消息
+      jsonRes(res, {
+        code: 500,
+        error: '注册过程中发生未知错误'
+      });
+    }
   }
 }

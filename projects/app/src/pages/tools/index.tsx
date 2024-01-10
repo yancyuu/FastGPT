@@ -21,7 +21,7 @@ const Tools = () => {
       ? [
           {
             icon: 'appStoreLight',
-            label: 'AI应用市场',
+            label: '团队应用',
             link: '/appStore'
           }
         ]

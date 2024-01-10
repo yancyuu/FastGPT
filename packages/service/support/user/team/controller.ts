@@ -52,7 +52,7 @@ export async function getUserDefaultTeam({ userId }: { userId: string }) {
 }
 export async function createDefaultTeam({
   userId,
-  teamName = 'My Team',
+  teamName = 'LazyGPT',
   avatar = '/icon/logo.svg',
   balance,
   maxSize = 5
