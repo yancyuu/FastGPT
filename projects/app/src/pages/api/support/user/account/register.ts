@@ -3,7 +3,7 @@ import { jsonRes } from '@fastgpt/service/common/response';
 import { MongoUser } from '@fastgpt/service/support/user/schema';
 import { connectToDatabase } from '@/service/mongo';
 import type { PostRegisterProps } from '@fastgpt/global/support/user/api.d';
-import { createDefaultTeam } from '@fastgpt/service/support/user/team/controller';
+import { setDefaultTeam } from '@fastgpt/service/support/user/team/controller';
 import { PRICE_SCALE } from '@fastgpt/global/support/wallet/bill/constants';
 
 export default async function registerHandler(req: NextApiRequest, res: NextApiResponse) {
@@ -36,8 +36,8 @@ export default async function registerHandler(req: NextApiRequest, res: NextApiR
       // 其他需要的用户信息
     });
     await newUser.save();
-    // 创建默认team
-    await createDefaultTeam({ userId: newUser._id, maxSize: 1, balance: 9999 * PRICE_SCALE });
+    // 增加team到到root用户的团队id
+    await setDefaultTeam({ userId: newUser._id, maxSize: 1, balance: 999 * PRICE_SCALE });
 
     jsonRes(res, {
       data: {

@@ -33,7 +33,7 @@ export const putAppById = (id: string, data: AppUpdateParams) =>
 
 /* 共享市场 */
 /**
- * 获取共享市场模型
+ * 获取共享团队模型
  */
 export const getShareModelList = (data: { searchText?: string } & RequestPaging) =>
   POST(`/core/app/share/getModels`, data);

@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     // 根据 userId 获取模型信息
     const myApps = await MongoApp.find(
-      { ...mongoRPermission({ teamId, tmbId, role }) },
+      { ...mongoRPermission({ teamId, tmbId, role }), tmbId: tmbId },
       '_id avatar name intro tmbId permission'
     ).sort({
       updateTime: -1

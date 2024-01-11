@@ -95,7 +95,7 @@
     "Add New": "新增",
     "Back": "返回",
     "Beta": "实验版",
-    "Business edition features": "这是商业版功能~",
+    "Business edition features": "请联系AI懒人单独部署你的团队应用～",
     "Choose": "选择",
     "Close": "关闭",
     "Collect": "收藏",
@@ -800,12 +800,12 @@
   },
   "navbar": {
     "Account": "账号",
-    "Apps": "应用",
+    "Apps": "我的应用",
     "Chat": "聊天",
     "Datasets": "知识库",
     "Module": "模块",
     "Plugin": "插件",
-    "Store": "应用市场",
+    "Store": "团队应用",
     "Tools": "工具"
   },
   "openapi": {
